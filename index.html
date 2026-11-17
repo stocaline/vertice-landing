@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VÉRTICE · Private Concierge Residencial</title>
+<meta name="description" content="Concierge residencial privado para moradores e condomínios de alto padrão. Pesquisa, curadoria e indicação dos melhores profissionais de confiança para a sua casa.">
+<link rel="icon" type="image/svg+xml" href="assets/logos/vertice-whatsapp-icone.svg">
+
+<!-- Google Fonts de Alta Tipografia -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ==========================================================================
+     NAVBAR (Barra Flutuante em Vidro Negro)
+     ========================================================================== -->
+<div class="navbar-wrap">
+  <nav class="navbar" aria-label="Navegação Principal">
+    <a href="#" class="brand">
+      <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 4 L94 50 L50 96 L6 50 Z" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M50 22 L76 50 L50 78 L24 50 Z" stroke="#C8C9CD" stroke-width="4" stroke-linejoin="round"/>
+        <line x1="6" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="50" y1="4" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="94" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+        <circle cx="50" cy="78" r="6" fill="#FFFFFF"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">VÉRTICE</span>
+        <span class="brand-sub">Private Concierge</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="#servicos" class="nav-link">O Que Resolvemos</a></li>
+      <li><a href="#tese" class="nav-link">A Filosofia</a></li>
+      <li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+      <li><a href="#contato" class="nav-link">Atendimento</a></li>
+    </ul>
+
+    <a href="https://wa.me/5548984777489" target="_blank" rel="noopener noreferrer" class="nav-cta">
+      <span class="dot-wa"></span>
+      Chamar no WhatsApp
+    </a>
+  </nav>
+</div>
+
+<!-- ==========================================================================
+     HERO SECTION (Editorial High-Contrast + 3D Black Card)
+     ========================================================================== -->
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="eyebrow">
+        <span class="sparkle">✦</span>
+        ATENDIMENTO EXCLUSIVO SOB DEMANDA
+      </div>
+      <h1 class="hero-title">
+        Seu tempo é precioso.<br>
+        Nós cuidamos da sua casa — <em>sem ciladas.</em>
+      </h1>
+      <p class="hero-desc">
+        O concierge residencial privado para quem não quer perder horas buscando prestadores ou caindo em orçamentos abusivos. Três caminhos checados em até 30 minutos, zero taxa para o morador.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/5548984777489?text=Ol%C3%A1!%20Gostaria%20de%20acionar%20o%20V%C3%A9rtice%20Private%20Concierge." target="_blank" rel="noopener noreferrer" class="btn-primary-pill">
+          <span>Mandar Mensagem no WhatsApp</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#como-funciona" class="btn-secondary-ghost">
+          <span>Como funciona em 3 passos</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="val">30 min</div>
+          <div class="lbl">Tempo médio de resposta</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">3 Opções</div>
+          <div class="lbl">Checadas por demanda</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">R$ 0</div>
+          <div class="lbl">Custo para o morador</div>
+        </div>
+        <div class="stat-item">
+          <div class="val">100%</div>
+          <div class="lbl">Entrada por mérito real</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Card Interativo -->
+    <div class="hero-card-stage" id="heroCardStage">
+      <div class="card-3d-wrap" id="card3d">
+        <div class="card-3d-face">
+          <div class="card-face-top">
+            <svg class="card-emblem-svg" viewBox="0 0 100 100" fill="none">
+              <path d="M50 4 L94 50 L50 96 L6 50 Z" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M50 22 L76 50 L50 78 L24 50 Z" stroke="#D8DAE0" stroke-width="4" stroke-linejoin="round"/>
+              <line x1="6" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="50" y1="4" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+              <line x1="94" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+              <circle cx="50" cy="78" r="6" fill="#FFFFFF"/>
+            </svg>
+            <div class="card-chip"></div>
+          </div>
+
+          <div class="card-face-mid">
+            <div class="card-brand-name">VÉRTICE</div>
+            <div class="card-brand-sub">CONCIERGE DE SERVIÇOS PARA A SUA CASA</div>
+          </div>
+
+          <div class="card-face-bot">
+            <span>BLACK CARD EDITION</span>
+            <span>(48) 98477-7489</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wood-pedestal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     BENTO GRID SECTION (Inspirado em service-bento-v2.webp)
+     ========================================================================== -->
+<section class="bento-section" id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">✦ Cobertura Completa</div>
+      <h2 class="section-title">Como Podemos <em>Te Ajudar</em></h2>
+      <p class="section-desc">
+        Soluções que respondem com agilidade, protegem o seu patrimônio e deixam você livre da dor de cabeça de procurar profissionais sozinho.
+      </p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Card 1 (Vertical Grande): Concierge Pessoal -->
+      <article class="bento-card tall">
+        <div class="bento-render-wrap">
+          <img src="assets/images/bento-concierge.png" alt="Concierge Pessoal" class="bento-render-img">
+        </div>
+        <div class="bento-content">
+          <span class="bento-tag">Atendimento Particular</span>
+          <h3 class="bento-title">Concierge Pessoal Dedicado</h3>
+          <p class="bento-desc">
+            Um canal direto no WhatsApp. Sem filas de espera, sem atendentes robóticos e sem preencher cadastros cansativos. Você fala com quem resolve.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 2 (Horizontal Superior): Reformas & Manutenção -->
+      <article class="bento-card wide-top">
+        <div class="bento-content">
+          <span class="bento-tag">Técnica & Execução</span>
+          <h3 class="bento-title">Reformas & Reparos Rápidos</h3>
+          <p class="bento-desc">
+            Pintura de alto padrão, revisão elétrica, desentupimentos, vazamentos hidráulicos e manutenção preventiva de ar-condicionado.
+          </p>
+        </div>
+        <div class="bento-render-wrap" style="width: 240px; margin-left: auto;">
+          <img src="assets/images/bento-tech.png" alt="Reformas Técnicas" class="bento-render-img">
+        </div>
+      </article>
+
+      <!-- Card 3: Biblioteca de Mapas -->
+      <article class="bento-card">
+        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
+          <img src="assets/images/bento-cubes.png" alt="Biblioteca de Mapas" class="bento-render-img" style="max-height: 130px;">
+        </div>
+        <div class="bento-content">
+          <span class="bento-tag">Inteligência Acumulada</span>
+          <h3 class="bento-title">Biblioteca de Mapas</h3>
+          <p class="bento-desc">
+            Mais de 80% das demandas já foram resolvidas em outros apartamentos. Acesso imediato aos prestadores mais bem avaliados do bairro.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 4: Marcenaria & Projetos Finos -->
+      <article class="bento-card">
+        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
+          <img src="assets/images/bento-palette.png" alt="Marcenaria Fina" class="bento-render-img" style="max-height: 130px;">
+        </div>
+        <div class="bento-content">
+          <span class="bento-tag">Acabamento Nobre</span>
+          <h3 class="bento-title">Marcenaria & Móveis</h3>
+          <p class="bento-desc">
+            Ajuste de móveis planejados, restauração de peças em madeira nobre, serralheria minimalista e iluminação cênica.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 5 (Horizontal Inferior): O Mapa dos 3 Caminhos -->
+      <article class="bento-card wide-bot">
+        <div class="bento-content">
+          <span class="bento-tag">Autonomia de Escolha</span>
+          <h3 class="bento-title">O Mapa dos 3 Caminhos</h3>
+          <p class="bento-desc">
+            Você nunca fica refém de um único orçamento. Em até 30 minutos entregamos 3 caminhos checados (o mais rápido, o mais econômico e o de maior acabamento) para você decidir.
+          </p>
+        </div>
+        <div class="bento-render-wrap" style="width: 260px; margin-left: auto;">
+          <img src="assets/images/bento-road.png" alt="3 Caminhos" class="bento-render-img">
+        </div>
+      </article>
+
+      <!-- Card 6: Filtro Anti-Cilada -->
+      <article class="bento-card">
+        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
+          <img src="assets/images/bento-lens.png" alt="Filtro Anti-Cilada" class="bento-render-img" style="max-height: 130px;">
+        </div>
+        <div class="bento-content">
+          <span class="bento-tag">Segurança & Pós</span>
+          <h3 class="bento-title">Filtro Anti-Cilada</h3>
+          <p class="bento-desc">
+            Checagem rigorosa de histórico e pontualidade. Acompanhamos 48h após a entrega: o profissional só continua na lista se a nota for impecável.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FEATURES SECTION (Inspirado em render-grid-v2.webp)
+     ========================================================================== -->
+<section class="features-section" id="tese">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">✦ Filosofia de Atendimento</div>
+      <h2 class="section-title">Cada detalhe cumpre um propósito — <em>nada sobra.</em></h2>
+      <p class="section-desc">
+        Menos atrito, zero promessas vazias e foco absoluto na segurança, discrição e tranquilidade do seu lar.
+      </p>
+    </div>
+
+    <!-- Linha Superior de 3 Cards -->
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="feature-img-box">
+          <img src="assets/images/feature-card1.png" alt="Moldado à sua rotina">
+        </div>
+        <div>
+          <h3 class="feature-title">Moldado à sua rotina</h3>
+          <p class="feature-desc">
+            O cartão Black Card na carteira para o momento da urgência ou o WhatsApp oficial a um clique de distância. Você aciona quando precisar.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-img-box">
+          <img src="assets/images/feature-card2.png" alt="Silencioso por padrão">
+        </div>
+        <div>
+          <h3 class="feature-title">Silencioso por padrão</h3>
+          <p class="feature-desc">
+            Tudo o que não agrega sai do caminho. Zero grupos de moradores com mensagens inúteis, zero spam. Atendimento particular e direto.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-img-box">
+          <img src="assets/images/feature-card3.png" alt="Decisão sem estresse">
+        </div>
+        <div>
+          <h3 class="feature-title">Decisão sem estresse</h3>
+          <p class="feature-desc">
+            Três opções organizadas com clareza. Você sabe exatamente quem faz mais rápido, quem cobra o preço justo e quem tem mais tradição no condomínio.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Linha Inferior de 2 Cards -->
+    <div class="features-grid-bottom">
+      <article class="feature-card">
+        <div class="feature-img-box">
+          <img src="assets/images/feature-card4.png" alt="Sem taxas para o morador">
+        </div>
+        <div>
+          <h3 class="feature-title">Sem taxas para o morador</h3>
+          <p class="feature-desc">
+            O morador não paga assinatura nem taxa de serviço pela curadoria. A contratação e o pagamento são feitos 100% direto com o prestador escolhido.
+          </p>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-img-box">
+          <img src="assets/images/feature-card5.png" alt="Entrada por mérito">
+        </div>
+        <div>
+          <h3 class="feature-title">Entrada por mérito, nunca por anúncio</h3>
+          <p class="feature-desc">
+            Nenhum profissional paga para ser indicado pelo VÉRTICE. O único critério de permanência é a pontualidade, a postura profissional e a nota dos moradores.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PAINEL DE MADEIRA NOBRE & NEGÓCIOS (Harmonização Arquitetônica)
+     ========================================================================== -->
+<section class="wood-panel-section" id="como-funciona">
+  <div class="container">
+    <div class="wood-banner">
+      <div class="wood-banner-overlay">
+        <div>
+          <div class="eyebrow" style="border-color: rgba(190, 140, 95, 0.4); color: #E6D0BE;">
+            ✦ PRIVACIDADE &amp; RIGOR EXECUTIVO
+          </div>
+          <h2 class="wood-banner-title">
+            O padrão de um <em>Family Office</em> aplicado à manutenção do seu condomínio.
+          </h2>
+          <p class="wood-banner-desc">
+            Tratamos sua residência com a mesma seriedade e confidencialidade com que você cuida dos seus negócios. Profissionais previamente identificados na portaria, com escopo delimitado e sem surpresas na fatura.
+          </p>
+        </div>
+
+        <div class="wood-banner-metrics">
+          <div class="wood-metric-row">
+            <div class="wood-metric-icon">1</div>
+            <div class="wood-metric-text">
+              <strong>Você pede no WhatsApp</strong>
+              <span>Diga o que precisa, prazo e detalhes do seu condomínio.</span>
+            </div>
+          </div>
+          <div class="wood-metric-row">
+            <div class="wood-metric-icon">2</div>
+            <div class="wood-metric-text">
+              <strong>Nós pesquisamos e checamos</strong>
+              <span>Avaliamos histórico, pontualidade e referências reais.</span>
+            </div>
+          </div>
+          <div class="wood-metric-row">
+            <div class="wood-metric-icon">3</div>
+            <div class="wood-metric-text">
+              <strong>Você recebe 3 opções prontas</strong>
+              <span>Decida com tranquilidade e pague direto ao profissional.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ENQUIRY & CONTATO FLUTUANTE (Inspirado em studio-enquiry-v2.webp)
+     ========================================================================== -->
+<section class="enquiry-section" id="contato">
+  <div class="enquiry-watermark">CONCIERGE</div>
+  
+  <div class="container">
+    <div class="enquiry-grid">
+      <!-- Coluna Esquerda -->
+      <div class="enquiry-left">
+        <h2>Mande sua pendência <span class="arrow">↗</span></h2>
+        <p class="enquiry-intro">
+          Tem uma reforma, reparo, vazamento ou demanda parada no seu apartamento? Nos envie uma mensagem. Respondemos em poucos minutos pelo WhatsApp.
+        </p>
+
+        <ul class="enquiry-checklist">
+          <li class="enquiry-check-item">
+            <span class="check-circle">✓</span>
+            <span>Retorno ágil em até 30 minutos no WhatsApp</span>
+          </li>
+          <li class="enquiry-check-item">
+            <span class="check-circle">✓</span>
+            <span>Atendimento humano e confidencial</span>
+          </li>
+          <li class="enquiry-check-item">
+            <span class="check-circle">✓</span>
+            <span>Acompanhamento de qualidade por 48h pós-entrega</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna Direita: Floating Form Card -->
+      <div class="enquiry-card">
+        <form id="enquiryForm">
+          <div class="form-row">
+            <div class="form-group" style="margin-bottom:0">
+              <input type="text" id="clientName" class="form-input" placeholder="Seu Nome">
+            </div>
+            <div class="form-group" style="margin-bottom:0">
+              <input type="text" id="clientLocation" class="form-input" placeholder="Condomínio ou Bairro">
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea id="clientDemand" class="form-textarea" placeholder="Qual é a sua pendência? (Ex: vazamento no banheiro, pintura da sala, revisão de ar-condicionado...)" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit-pill">
+            <span>Iniciar Atendimento no WhatsApp</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Barra Inferior de Contatos Diretos -->
+    <div class="enquiry-contact-bar">
+      <a href="https://wa.me/5548984777489" target="_blank" rel="noopener noreferrer" class="contact-pill-card">
+        <div class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="contact-info">
+          <span class="label">WhatsApp Direto</span>
+          <span class="value">(48) 98477-7489</span>
+        </div>
+      </a>
+
+      <div class="contact-pill-card">
+        <div class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-info">
+          <span class="label">Área de Cobertura</span>
+          <span class="value">Florianópolis &amp; Região</span>
+        </div>
+      </div>
+
+      <a href="mailto:contato@verticeprivate.com" class="contact-pill-card">
+        <div class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="contact-info">
+          <span class="label">E-mail Institucional</span>
+          <span class="value">contato@verticeprivate.com</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FOOTER (Elegância, Discrição e Blindagem Jurídica)
+     ========================================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>VÉRTICE</h3>
+        <p>
+          Concierge de serviços para a sua casa. Pesquisa independente e seleção criteriosa dos melhores profissionais para moradores e condomínios de alto padrão.
+        </p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul>
+            <li><a href="#servicos">O Que Resolvemos</a></li>
+            <li><a href="#tese">A Filosofia</a></li>
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#contato">Fale Conosco</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Canais</h5>
+          <ul>
+            <li><a href="https://wa.me/5548984777489" target="_blank">WhatsApp Oficial</a></li>
+            <li><a href="mailto:contato@verticeprivate.com">contato@verticeprivate.com</a></li>
+            <li><a href="#">verticeprivate.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 VÉRTICE Private Concierge. Todos os direitos reservados.</span>
+      <span style="opacity:.6; font-size:11.5px">Curadoria informativa independente (Art. 663 CC). Não intermediamos nem cobramos comissão de prestadores.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

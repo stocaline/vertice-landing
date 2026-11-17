@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Gradiente Platina / Prata Nobre com alto brilho especular -->
+    <linearGradient id="platina" x1="0.1" y1="0.05" x2="0.9" y2="0.95">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="18%" stop-color="#E6E8EC"/>
+      <stop offset="38%" stop-color="#B8BAC0"/>
+      <stop offset="55%" stop-color="#FFFFFF"/>
+      <stop offset="72%" stop-color="#A5A7AF"/>
+      <stop offset="88%" stop-color="#D4D6DC"/>
+      <stop offset="100%" stop-color="#8E9098"/>
+    </linearGradient>
+
+    <!-- Gradiente suave secundário para profundidade -->
+    <linearGradient id="platinaDark" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A7C84"/>
+      <stop offset="50%" stop-color="#C0C2C8"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Fundo Preto Obsidiana com iluminação radial suave no centro -->
+    <radialGradient id="fundoObsidiana" cx="50%" cy="46%" r="65%">
+      <stop offset="0%" stop-color="#1B1C20"/>
+      <stop offset="45%" stop-color="#101114"/>
+      <stop offset="80%" stop-color="#0A0A0C"/>
+      <stop offset="100%" stop-color="#050506"/>
+    </radialGradient>
+
+    <!-- Brilho difuso do emblema -->
+    <filter id="brilhoPrata" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0.9  0 1 0 0 0.92  0 0 1 0 0.96  0 0 0 0.25 0" in="blur" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Sombra sutil interna para dar relevo de moeda/joia -->
+    <filter id="dropSombra" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo Dark Obsidiana -->
+  <rect width="1024" height="1024" fill="url(#fundoObsidiana)"/>
+
+  <!-- Anel circular de segurança e requinte (alinhado com o corte do WhatsApp) -->
+  <circle cx="512" cy="512" r="476" fill="none" stroke="url(#platina)" stroke-width="1.5" stroke-opacity="0.22" stroke-dasharray="8 6"/>
+  <circle cx="512" cy="512" r="462" fill="none" stroke="url(#platina)" stroke-width="0.8" stroke-opacity="0.12"/>
+
+  <!-- EMBLEMA VÉRTICE GEOMÉTRICO (Prisma + 3 Caminhos Convergindo) -->
+  <!-- Dimensões: 520px largura x 560px altura, centralizado com 25% de margem de corte -->
+  <g filter="url(#dropSombra)">
+    <g filter="url(#brilhoPrata)">
+      <!-- Losango Externo Principal -->
+      <path d="M512 216 L776 512 L512 808 L248 512 Z" 
+            fill="none" 
+            stroke="url(#platina)" 
+            stroke-width="14" 
+            stroke-linejoin="round" 
+            stroke-linecap="round"/>
+
+      <!-- Losango Interno (Facetado) -->
+      <path d="M512 332 L664 512 L512 692 L360 512 Z" 
+            fill="rgba(255, 255, 255, 0.02)" 
+            stroke="url(#platinaDark)" 
+            stroke-width="10" 
+            stroke-linejoin="round" 
+            stroke-linecap="round"/>
+
+      <!-- Os 3 Caminhos de Solução Convergindo no Vértice de Decisão (512, 692) -->
+      <!-- Caminho 1: Esquerda para o Vértice -->
+      <line x1="248" y1="512" x2="512" y2="692" stroke="url(#platina)" stroke-width="12" stroke-linecap="round"/>
+      <!-- Caminho 2: Eixo Central Vertical (Topo para o Vértice) -->
+      <line x1="512" y1="216" x2="512" y2="692" stroke="url(#platina)" stroke-width="12" stroke-linecap="round"/>
+      <!-- Caminho 3: Direita para o Vértice -->
+      <line x1="776" y1="512" x2="512" y2="692" stroke="url(#platina)" stroke-width="12" stroke-linecap="round"/>
+
+      <!-- Ponto do Vértice (A Solução / O Ponto de Convergência) -->
+      <circle cx="512" cy="692" r="16" fill="url(#platina)"/>
+      <circle cx="512" cy="692" r="6" fill="#0E0F12"/>
+      
+      <!-- Ponto do Topo da Pirâmide (Início da Demanda) -->
+      <circle cx="512" cy="216" r="8" fill="url(#platina)"/>
+    </g>
+  </g>
+</svg>

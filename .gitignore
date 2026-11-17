@@ -1,0 +1,10 @@
+# Dependencies & OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Python cache (if scripts run)
+__pycache__/
+*.pyc
+.venv/
+venv/
