@@ -1,140 +1,160 @@
 /**
- * VÉRTICE PRIVATE CONCIERGE · INTERACTIVE MOTION & LOGIC
- * Efeitos: 3D Card Tilt, Magnetic Buttons, Scroll Reveal, WhatsApp Funnel
+ * VÉRTICE PRIVATE CONCIERGE · INTERACTION & MOTION CONTROLLER
+ * Animações: Preloader SVG, Ambient Cursor, 3D Tilt, Envelope Interativo & WhatsApp Bridge
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  init3DCardTilt();
-  initWhatsAppForm();
-  initScrollAnimations();
-  initSmoothScroll();
-});
+  // 1. Preloader com Logotipo se formando
+  const preloader = document.getElementById('preloader');
+  const minPreloaderTime = 1600; // 1.6 segundos para contemplar o desenho do monograma
+  const startTime = Date.now();
 
-/* --------------------------------------------------------------------------
-   1. INTERACTIVE 3D CARD TILT (Hero Black Card)
-   -------------------------------------------------------------------------- */
-function init3DCardTilt() {
-  const cardStage = document.getElementById('heroCardStage');
-  const card = document.getElementById('card3d');
+  const hidePreloader = () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, minPreloaderTime - elapsed);
 
-  if (!cardStage || !card) return;
+    setTimeout(() => {
+      if (preloader) {
+        preloader.classList.add('is-loaded');
+        // Remover do fluxo após a transição para liberar performance
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 800);
+      }
+    }, remaining);
+  };
 
-  let bounds;
-
-  function rotateToMouse(e) {
-    bounds = cardStage.getBoundingClientRect();
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    const leftX = mouseX - bounds.x;
-    const topY = mouseY - bounds.y;
-    const center = {
-      x: leftX - bounds.width / 2,
-      y: topY - bounds.height / 2
-    };
-    const distance = Math.sqrt(center.x ** 2 + center.y ** 2);
-
-    const maxTilt = 18;
-    const tiltX = (center.y / (bounds.height / 2)) * -maxTilt;
-    const tiltY = (center.x / (bounds.width / 2)) * maxTilt;
-
-    card.style.transform = `
-      rotateX(${tiltX.toFixed(2)}deg) 
-      rotateY(${tiltY.toFixed(2)}deg)
-      scale3d(1.04, 1.04, 1.04)
-    `;
-
-    // Efeito de brilho especular dinâmico
-    const glintProg = Math.max(0.15, Math.min(0.85, (center.x / bounds.width) + 0.5));
-    card.style.setProperty('--card-glint', glintProg.toFixed(2));
+  if (document.readyState === 'complete') {
+    hidePreloader();
+  } else {
+    window.addEventListener('load', hidePreloader);
   }
 
-  cardStage.addEventListener('mouseenter', () => {
-    bounds = cardStage.getBoundingClientRect();
-    document.addEventListener('mousemove', rotateToMouse);
-  });
+  // 2. Cursor Ambient Spotlight
+  const spotlight = document.querySelector('.cursor-spotlight');
+  if (spotlight && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
 
-  cardStage.addEventListener('mouseleave', () => {
-    document.removeEventListener('mousemove', rotateToMouse);
-    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-    card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-    card.style.setProperty('--card-glint', '0.35');
-  });
-}
+    window.addEventListener('pointermove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
 
-/* --------------------------------------------------------------------------
-   2. ENQUIRY FORM -> DISPARO DIRETO PARA O WHATSAPP
-   -------------------------------------------------------------------------- */
-function initWhatsAppForm() {
-  const form = document.getElementById('enquiryForm');
-  if (!form) return;
+    const animateSpotlight = () => {
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+      spotlight.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(animateSpotlight);
+    };
+    animateSpotlight();
+  }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nome = document.getElementById('clientName').value.trim();
-    const local = document.getElementById('clientLocation').value.trim();
-    const demanda = document.getElementById('clientDemand').value.trim();
-
-    if (!demanda) {
-      alert('Por favor, descreva brevemente qual serviço ou pendência você precisa resolver.');
-      return;
+  // 3. Navbar Scrolled State
+  const navbar = document.querySelector('.navbar');
+  const handleScroll = () => {
+    if (window.scrollY > 40) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
     }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Monta mensagem natural e elegante para o WhatsApp do Concierge
-    let texto = 'Olá! Gostaria de acionar a curadoria do Vértice Private Concierge.';
-    if (nome) texto += `\nMeu nome é *${nome}*`;
-    if (local) texto += ` (Condomínio / Bairro: *${local}*).`;
-    else texto += '.';
-    texto += `\n\nMinha pendência é: \n"${demanda}"`;
-    texto += '\n\nAguardo as 3 opções checadas. Obrigado!';
-
-    const encodedText = encodeURIComponent(texto);
-    const waUrl = `https://wa.me/5548984777489?text=${encodedText}`;
-
-    // Abre direto o WhatsApp em nova aba
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
-  });
-}
-
-/* --------------------------------------------------------------------------
-   3. SCROLL REVEAL ANIMATIONS (IntersectionObserver)
-   -------------------------------------------------------------------------- */
-function initScrollAnimations() {
-  const elements = document.querySelectorAll('.reveal-on-scroll');
-  if (!elements.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        observer.unobserve(entry.target);
-      }
+  // 4. Bento Grid & Feature Cards Mouse Sheen
+  const cards = document.querySelectorAll('.bento-card, .feature-card');
+  cards.forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
   });
 
-  elements.forEach(el => observer.observe(el));
-}
+  // 5. Envelope de Luxo 3D Interativo
+  const envelopeWrapper = document.getElementById('envelopeWrapper');
+  const envelopeSeal = document.getElementById('envelopeSeal');
+  const letterInputs = document.querySelectorAll('.letter-input, .letter-textarea');
+  const letterForm = document.getElementById('letterForm');
 
-/* --------------------------------------------------------------------------
-   4. SMOOTH SCROLL PARA ÂNCORAS
-   -------------------------------------------------------------------------- */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  const openEnvelope = () => {
+    if (envelopeWrapper && !envelopeWrapper.classList.contains('is-open')) {
+      envelopeWrapper.classList.add('is-open');
+    }
+  };
+
+  if (envelopeSeal) {
+    envelopeSeal.addEventListener('click', openEnvelope);
+  }
+
+  letterInputs.forEach((input) => {
+    input.addEventListener('focus', openEnvelope);
+  });
+
+  // Auto-abrir com IntersectionObserver ao rolar até o contato
+  const contactSection = document.getElementById('contato');
+  if (contactSection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(openEnvelope, 400);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(contactSection);
+  }
+
+  // 6. Envio da Carta via WhatsApp
+  if (letterForm) {
+    letterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('letterName')?.value.trim() || 'Não informado';
+      const location = document.getElementById('letterLocation')?.value.trim() || 'Florianópolis / Região';
+      const demand = document.getElementById('letterDemand')?.value.trim();
+
+      if (!demand) {
+        alert('Por favor, descreva em poucas palavras o que você gostaria de resolver na sua casa.');
+        return;
+      }
+
+      const whatsappNumber = '5548984777489';
+      const text = [
+        'Olá, equipe VÉRTICE Private Concierge.',
+        '',
+        `Meu nome é: ${name}`,
+        `Localização: ${location}`,
+        '',
+        'Em casa, eu gostaria de:',
+        `"${demand}"`,
+        '',
+        'Gostaria de agendar uma conversa confidencial para entender como podemos conduzir essa demanda.'
+      ].join('\n');
+
+      const encodedText = encodeURIComponent(text);
+      const url = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  // 7. Smooth Scroll para links internos
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
-      if (targetId === '#' || !targetId) return;
-
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        e.preventDefault();
-        targetEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   });
-}
+});
