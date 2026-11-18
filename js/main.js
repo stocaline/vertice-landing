@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const demand = document.getElementById('letterDemand')?.value.trim();
 
       if (!demand) {
-        alert('Por favor, descreva em poucas palavras o que você gostaria de resolver na sua casa.');
+        alert('Por favor, descreva em poucas palavras o que você gostaria de solicitar ou resolver.');
         return;
       }
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `Meu nome é: ${name}`,
         `Localização: ${location}`,
         '',
-        'Em casa, eu gostaria de:',
+        'Gostaria de solicitar:',
         `"${demand}"`,
         '',
         'Gostaria de agendar uma conversa confidencial para entender como podemos conduzir essa demanda.'
