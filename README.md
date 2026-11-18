@@ -1,18 +1,25 @@
-# VÉRTICE — Private Concierge Residencial
+# VÉRTICE — Private Concierge
 
-> **"Concierge de serviços para a sua casa."**  
-> Uma experiência editorial, minimalista e sofisticada concebida para moradores de condomínios de alto padrão.
+> **"A vida que você deseja, conduzida com discrição."**  
+> Uma experiência editorial de ultra-luxo e lifestyle management concebida para clientes de alto padrão.
 
 ---
 
 ## 🏛️ Sobre o Projeto
 
-A landing page da **VÉRTICE Private** foi projetada com foco em exclusividade, elegância e conversão direta para clientes/moradores. O design equilibra:
-- **Estética High-Contrast Noir:** Fundo preto obsidiana profundo (`#08090A`), superfícies de vidro escuro fosco (*matte glassmorphism*) e tipografia prata platina com acentos em branco puro.
-- **Madeira Nobre (Dark Walnut):** Banner executivo com textura flutuante e acabamento de carvalho/nogueira escura, trazendo calor e autenticidade ao minimalismo digital.
-- **Renders 3D Metálicos & Bento Grid:** Grid assimétrico inspirado no layout de alta relojoaria e design editorial suíço, com ícones e objetos cromados em perspectiva.
-- **Hero Interativo (Cartão Black Físico):** Simulação 3D com efeito *tilt* interativo de giroscópio/cursor do mouse e brilho especular dinâmico no acabamento platina do cartão físico da Vértice.
-- **Conversão sem Fricção:** Checklist interativo e formulário flutuante integrado ao WhatsApp oficial `+55 (48) 98477-7489`, gerando mensagens pré-formatadas prontas para envio.
+A landing page da **VÉRTICE Private** foi projetada com rigor estético, minimalismo noir e conversão discreta via WhatsApp. Principais diferenciais e arquitetura de design:
+
+- **Preloader com Logotipo Vetorial se Formando:** Ao abrir o site, as arestas do monograma geométrico da VÉRTICE são desenhadas com traço de luz prateada (`stroke-dashoffset`), com pulsação suave no ponto de convergência central e revelação em tipografia *Cinzel*.
+- **Posicionamento Concierge Integral (Lifestyle Management):**
+  - **Viagens e Experiências:** Itinerários sob medida, hospedagens exclusivas e acessos raros.
+  - **Mobilidade e Transporte:** Motoristas particulares de confiança e transfers discretos.
+  - **Rotina e Tempo Pessoal:** Agenda, compromissos e prioridades conduzidos com leveza.
+  - **Acessos e Gastronomia:** Mesas disputadas, eventos fechados e curadoria cultural.
+  - **Rede de Contatos e Especialistas:** Médicos de referência e assessoria qualificada.
+  - **Gestão de Residências & Imprevistos:** Da residência impecável a imprevistos solucionados em silêncio.
+- **Seção de Contato estilo Carta / Envelope de Luxo 3D:** Envelope físico de papelaria nobre com lacre metálico. Ao rolar ou interagir, o envelope se abre em 3D (`rotateX(180deg)`) e a folha timbrada desliza suavemente para preenchimento e envio direto ao WhatsApp oficial `+55 (48) 98477-7489`.
+- **Estética High-Contrast Noir & Madeira Nobre:** Preto obsidiana profundo (`#060709`), acentos em carvalho/nogueira (*dark walnut*), superfícies de vidro fosco (*matte glassmorphism*) e luz ambiente (*cursor spotlight*) dinâmica.
+- **Copywriting Humanizado:** Redigido pelo Claude com pontuação cadenciada, elegância aristocrática e sem travessões.
 
 ---
 
@@ -20,27 +27,16 @@ A landing page da **VÉRTICE Private** foi projetada com foco em exclusividade, 
 
 ```text
 vertice-landing/
-├── index.html                   # Estrutura semântica principal (5 seções)
+├── index.html                   # Estrutura semântica principal
 ├── css/
-│   └── style.css                # Design tokens, tipografia, glassmorphism e animações
+│   └── style.css                # Design tokens, preloader animado, envelope 3D e motion
 ├── js/
-│   └── main.js                  # Tilt 3D, spec glint, scroll reveals e WhatsApp bridge
+│   └── main.js                  # Lógica do preloader, spotlight, envelope 3D e WhatsApp bridge
 ├── assets/
-│   ├── images/                  # 12 Renders 3D cromados e textura nobre de madeira
-│   │   ├── bento-concierge.png
-│   │   ├── bento-tech.png
-│   │   ├── bento-cubes.png
-│   │   ├── bento-palette.png
-│   │   ├── bento-road.png
-│   │   ├── bento-lens.png
-│   │   ├── feature-card1.png ... feature-card5.png
-│   │   └── wood-texture.jpg
-│   └── logos/                   # Identidade oficial Vértice (PNG e SVG vetorial)
-│       ├── vertice-whatsapp-icone.png
-│       ├── vertice-whatsapp-completo.png
-│       ├── vertice-whatsapp-icone-transparente.png
-│       └── vertice-whatsapp-icone.svg
-├── generate_3d_assets.py        # Script gerador/renderizador dos assets 3D
+│   ├── images/                  # 12 Renders 3D cromados e textura nobre de carvalho
+│   └── logos/                   # Identidade oficial VÉRTICE (PNG e SVG vetorial)
+├── copywriting_lifestyle.md     # Documento mestre de redação editorial (Claude Opus 5.5)
+├── generate_3d_assets.py        # Script gerador dos assets visuais
 ├── .gitignore
 └── README.md
 ```
@@ -63,31 +59,20 @@ Abra seu navegador em: [`http://localhost:8000`](http://localhost:8000) ou dê d
 
 ---
 
-## 📤 Publicação no GitHub (`stocaline/vertice-landing`)
+## 🌐 Deploy no GitHub Pages
 
-Para enviar este repositório para a sua conta pessoal no GitHub:
-
-1. **Crie um novo repositório vazio no seu GitHub:**  
-   Acesse [github.com/new](https://github.com/new) e dê o nome `vertice-landing` (deixe desmarcada a opção de adicionar README).
-
-2. **No terminal dentro da pasta `D:\workspace\vertice-landing`, execute:**
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/stocaline/vertice-landing.git
-   git push -u origin main
-   ```
-
-3. **Deploy no GitHub Pages (Opcional):**
-   - No GitHub do repositório, vá em **Settings** > **Pages**.
-   - Em *Source*, selecione `Deploy from a branch` e escolha a branch `main` (pasta `/root`).
-   - A página ficará instantaneamente acessível online no endereço:  
-     `https://stocaline.github.io/vertice-landing/`
+Para ativar a visualização online no seu GitHub:
+1. Acesse o repositório em: [github.com/stocaline/vertice-landing](https://github.com/stocaline/vertice-landing).
+2. Vá em **Settings** > **Pages**.
+3. Em *Build and deployment* > *Source*, selecione `Deploy from a branch`.
+4. Escolha a branch `main` e a pasta `/ (root)`.
+5. Em poucos instantes o site estará acessível no endereço:  
+   👉 **`https://stocaline.github.io/vertice-landing/`**
 
 ---
 
-## 🎨 Design Tokens & Tipografia
+## 🎨 Tipografia
 
-- **Cinzel / Playfair Display:** Serifas editoriais clássicas para títulos de alto impacto.
-- **Plus Jakarta Sans:** Tipografia moderna de legibilidade máxima para corpo e interfaces.
-- **JetBrains Mono:** Numerais e tags técnicas em estilo estúdio suíço.
-- **Paleta:** Obsidian `#08090A` / `#0D0E12`, Platinum `#E4E7EC`, Crisp White `#FFFFFF`, Muted Silver `#8F94A0`, Walnut Warmth `#20140D`.
+- **Cinzel:** Logotipo e títulos com proporções epigráficas clássicas.
+- **Plus Jakarta Sans:** Tipografia moderna de alta legibilidade para corpo e interface.
+- **JetBrains Mono:** Tags técnicas e numerais de precisão.
