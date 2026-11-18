@@ -5,21 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VÉRTICE · Private Concierge</title>
 <meta name="description" content="Um concierge privado que cuida de cada detalhe da sua rotina, das suas viagens e das suas escolhas. Com elegância, reserva absoluta e a atenção de quem conhece você pelo nome.">
+<meta name="theme-color" content="#060709">
 <link rel="icon" type="image/svg+xml" href="assets/logos/vertice-whatsapp-icone.svg">
+<script>document.documentElement.classList.add('js')</script>
 
-<!-- Google Fonts de Alta Tipografia -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/photo-desk.webp">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
 
-<!-- ==========================================================================
-     PRELOADER COM LOGOTIPO VETORIAL ANIMADO SE FORMANDO
-     ========================================================================== -->
-<div class="preloader" id="preloader">
+<!-- Ícones em traço único (1.25), mesma família do emblema -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.2 8.8 13.1 13.1 8.8 15.2 10.9 10.9z"/></symbol>
+    <symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 14.2v6.3M9.9 11.4 3.8 10M14.1 11.4l6.1-1.4"/></symbol>
+    <symbol id="i-glass" viewBox="0 0 24 24"><path d="M8 3.5h8l-.4 4.6a3.6 3.6 0 0 1-7.2 0z"/><path d="M12 11.8v8.7M8.5 20.5h7"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M15.5 5a3.2 3.2 0 0 1 0 6.1M17.5 14.6a5.5 5.5 0 0 1 3 5.4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5v10.5h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24"><path d="M7 4.5h10l3.5 4.8L12 20 3.5 9.3z"/><path d="M3.5 9.3h17M9.5 4.5 12 20l2.5-15.5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.2 7.5L3.5 20.5l1.4-4.6a8.4 8.4 0 1 1 15.6-4.3z"/></symbol>
+    <symbol id="i-nodes" viewBox="0 0 24 24"><circle cx="5.5" cy="6.5" r="2"/><circle cx="18.5" cy="6.5" r="2"/><circle cx="12" cy="17.5" r="2"/><path d="M7.5 6.5h9M6.6 8.2l4.3 7.6M17.4 8.2l-4.3 7.6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="1.5"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3M12 14.5v2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.3 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.3-3.5-8.5S9.6 5.9 12 3.5z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-emblem" viewBox="0 0 100 100"><path d="M50 6 L92 50 L50 94 L8 50 Z"/><path d="M50 24 L74 50 L50 76 L26 50 Z"/><path d="M8 50 L50 76 M50 6 L50 76 M92 50 L50 76"/></symbol>
+  </defs>
+</svg>
+
+<!-- PRELOADER: monograma se desenhando -->
+<div class="preloader" id="preloader" aria-hidden="true">
   <div class="preloader-emblem-wrap">
     <svg class="preloader-svg" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -30,57 +51,32 @@
           <stop offset="100%" stop-color="#8E919B"/>
         </linearGradient>
       </defs>
-      
-      <!-- Losango Externo Principal -->
-      <path class="draw-path" d="M512 216 L776 512 L512 808 L248 512 Z" 
-            stroke="url(#preloaderPlatina)" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
-
-      <!-- Losango Interno Facetado -->
-      <path class="draw-path delay-1" d="M512 332 L664 512 L512 692 L360 512 Z" 
-            stroke="#9EA1AA" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
-
-      <!-- Os 3 Caminhos de Solução Convergindo no Vértice -->
-      <line class="draw-path delay-2" x1="248" y1="512" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="12" stroke-linecap="round"/>
-      <line class="draw-path delay-2" x1="512" y1="216" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="12" stroke-linecap="round"/>
-      <line class="draw-path delay-2" x1="776" y1="512" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="12" stroke-linecap="round"/>
-
-      <!-- Vértice Central (O Ponto de Decisão e Convergência) -->
-      <circle class="pulse-point" cx="512" cy="692" r="16" fill="url(#preloaderPlatina)"/>
-      <circle class="pulse-point" cx="512" cy="692" r="6" fill="#0A0B0E"/>
-      <circle class="pulse-point" cx="512" cy="216" r="8" fill="url(#preloaderPlatina)"/>
+      <path class="draw-path" d="M512 216 L776 512 L512 808 L248 512 Z" stroke="url(#preloaderPlatina)" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+      <path class="draw-path delay-1" d="M512 332 L664 512 L512 692 L360 512 Z" stroke="#9EA1AA" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+      <line class="draw-path delay-2" x1="248" y1="512" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="10" stroke-linecap="round"/>
+      <line class="draw-path delay-2" x1="512" y1="216" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="10" stroke-linecap="round"/>
+      <line class="draw-path delay-2" x1="776" y1="512" x2="512" y2="692" stroke="url(#preloaderPlatina)" stroke-width="10" stroke-linecap="round"/>
+      <circle class="pulse-point" cx="512" cy="692" r="14" fill="url(#preloaderPlatina)"/>
     </svg>
   </div>
-
   <div class="preloader-brand">
-    <div class="preloader-title">V É R T I C E</div>
+    <div class="preloader-title">VÉRTICE</div>
     <div class="preloader-subtitle">Private Concierge</div>
-    <div class="preloader-progress-bar">
-      <div class="preloader-progress-fill"></div>
-    </div>
+    <div class="preloader-progress-bar"><div class="preloader-progress-fill"></div></div>
   </div>
 </div>
 
-<!-- Cursor Spotlight Ambiente -->
-<div class="cursor-spotlight"></div>
+<div class="cursor-spotlight" aria-hidden="true"></div>
 
-<!-- ==========================================================================
-     NAVBAR (Barra Flutuante em Vidro Negro)
-     ========================================================================== -->
+<!-- NAVBAR -->
 <div class="navbar-wrap">
-  <nav class="navbar" aria-label="Navegação Principal">
-    <a href="#" class="brand">
-      <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 4 L94 50 L50 96 L6 50 Z" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
-        <path d="M50 22 L76 50 L50 78 L24 50 Z" stroke="#C8C9CD" stroke-width="4" stroke-linejoin="round"/>
-        <line x1="6" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="50" y1="4" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-        <line x1="94" y1="50" x2="50" y2="78" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
-        <circle cx="50" cy="78" r="6" fill="#FFFFFF"/>
-      </svg>
-      <div class="brand-text">
+  <nav class="navbar" aria-label="Navegação principal">
+    <a href="#" class="brand" aria-label="VÉRTICE, início">
+      <svg class="brand-logo-svg" aria-hidden="true"><use href="#i-emblem"/></svg>
+      <span class="brand-text">
         <span class="brand-name">VÉRTICE</span>
         <span class="brand-sub">Private Concierge</span>
-      </div>
+      </span>
     </a>
 
     <ul class="nav-menu">
@@ -91,398 +87,330 @@
     </ul>
 
     <a href="https://wa.me/5548984777489" target="_blank" rel="noopener noreferrer" class="nav-cta">
-      <span class="dot-wa"></span>
-      WhatsApp Concierge
+      <span class="dot-wa" aria-hidden="true"></span>
+      WhatsApp<span class="nav-cta-extra">&nbsp;Concierge</span>
     </a>
   </nav>
 </div>
 
-<!-- ==========================================================================
-     HERO SECTION (Editorial High-Contrast, Madeira & Atmosfera de Atelier)
-     ========================================================================== -->
+<main>
+
+<!-- HERO -->
 <section class="hero-section">
-  <div class="hero-backdrop-glow"></div>
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/images/photo-desk.webp" alt="" class="hero-img" width="1988" height="791" fetchpriority="high">
+  </div>
 
-  <div class="container">
+  <div class="container hero-inner">
     <div class="hero-editorial-wrap">
-      <div class="eyebrow">
-        <span class="sparkle">✦</span>
-        CONCIERGE PRIVADO INTEGRAL
-      </div>
-
-      <h1 class="hero-title">
+      <h1 class="hero-title reveal">
         A vida que você deseja,<br>
         <em>conduzida com discrição.</em>
       </h1>
 
-      <p class="hero-desc">
+      <p class="hero-desc reveal" style="--d: 120ms">
         Um concierge privado que cuida de cada detalhe da sua rotina, das suas viagens e das suas escolhas. Com elegância, reserva absoluta e a atenção de quem conhece você pelo nome.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-actions reveal" style="--d: 220ms">
         <a href="#contato" class="btn-primary-pill">
           <span>Conversar com o seu concierge</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
         <a href="#servicos" class="btn-secondary-ghost">
           <span>Conhecer a curadoria</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
         </a>
       </div>
-
-      <div class="hero-pillars">
-        <div class="pillar-item">
-          <div class="pillar-num">01</div>
-          <div class="pillar-title">Tempo devolvido</div>
-          <div class="pillar-sub">Delegue o que consome os seus dias e reserve as horas para o que realmente importa.</div>
-        </div>
-        <div class="pillar-item">
-          <div class="pillar-num">02</div>
-          <div class="pillar-title">Acessos reservados</div>
-          <div class="pillar-sub">Portas que se abrem com naturalidade, onde quer que você esteja.</div>
-        </div>
-        <div class="pillar-item">
-          <div class="pillar-num">03</div>
-          <div class="pillar-title">Confiança absoluta</div>
-          <div class="pillar-sub">Uma pessoa dedicada, uma palavra empenhada, nenhuma exposição.</div>
-        </div>
-      </div>
     </div>
+
+    <ul class="hero-pillars reveal" style="--d: 340ms">
+      <li class="pillar-item">
+        <span class="pillar-title">Tempo devolvido</span>
+        <span class="pillar-sub">Delegue o que consome os seus dias e reserve as horas para o que realmente importa.</span>
+      </li>
+      <li class="pillar-item">
+        <span class="pillar-title">Acessos reservados</span>
+        <span class="pillar-sub">Portas que se abrem com naturalidade, onde quer que você esteja.</span>
+      </li>
+      <li class="pillar-item">
+        <span class="pillar-title">Confiança absoluta</span>
+        <span class="pillar-sub">Uma pessoa dedicada, uma palavra empenhada, nenhuma exposição.</span>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ==========================================================================
-     MANIFESTO EDITORIAL (Reserva & Tempo)
-     ========================================================================== -->
-<section class="manifesto-section" id="manifesto">
+<!-- MANIFESTO (inverte para marfim ao entrar em cena) -->
+<section class="manifesto-section theme-light" id="manifesto" data-invert>
   <div class="container">
-    <div class="manifesto-card">
-      <svg class="manifesto-emblem" viewBox="0 0 100 100" fill="none">
-        <path d="M50 8 L90 50 L50 92 L10 50 Z" stroke="#FFFFFF" stroke-width="4"/>
-        <line x1="50" y1="8" x2="50" y2="76" stroke="#FFFFFF" stroke-width="3"/>
-        <circle cx="50" cy="76" r="5" fill="#FFFFFF"/>
-      </svg>
-      <div class="manifesto-quote">
-        "O tempo é o único bem que não se recupera, e merece ser vivido por inteiro.<br>
-        Liberdade é poder escolher onde estar, sem carregar o peso de cada providência."
-      </div>
-      <div class="manifesto-tagline">
+    <figure class="manifesto">
+      <svg class="manifesto-emblem reveal" aria-hidden="true"><use href="#i-emblem"/></svg>
+      <blockquote class="manifesto-quote reveal" style="--d: 100ms">
+        <p>“O tempo é o único bem que não se recupera, e merece ser vivido por inteiro. Liberdade é poder escolher onde estar, sem carregar o peso de cada providência.”</p>
+      </blockquote>
+      <figcaption class="manifesto-tagline reveal" style="--d: 220ms">
         Enquanto você vive, articulamos tudo em silêncio, para que apenas o resultado chegue até você.
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ==========================================================================
-     BENTO GRID SECTION (Serviços de Concierge Privado Integral)
-     ========================================================================== -->
+<!-- INTERLÚDIO FOTOGRÁFICO -->
+<section class="interlude" aria-label="Ambiente VÉRTICE">
+  <div class="interlude-frame reveal-media">
+    <img src="assets/images/photo-wall.webp" alt="Recepção com o emblema VÉRTICE em metal escovado sobre parede escura, iluminada por luz natural" class="interlude-img" width="1672" height="941" loading="lazy">
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
 <section class="bento-section" id="servicos">
   <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">✦ Cobertura Integral</div>
+    <header class="section-header reveal">
       <h2 class="section-title">O que o concierge <em>resolve por você</em></h2>
       <p class="section-desc">
         Da logística da sua rotina a viagens extraordinárias, conexões qualificadas e gestão patrimonial.
       </p>
-    </div>
+    </header>
 
     <div class="bento-grid">
-      <!-- Card 1: Rotina e Tempo Pessoal (Tall) -->
-      <article class="bento-card tall">
-        <div class="bento-render-wrap">
-          <img src="assets/images/bento-concierge.png" alt="Rotina e Tempo Pessoal" class="bento-render-img">
-        </div>
+      <article class="bento-card tall reveal">
+        <div class="bento-photo" aria-hidden="true"></div>
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Gestão Pessoal &amp; Tempo</span>
+          <span class="bento-tag">Gestão pessoal &amp; tempo</span>
           <h3 class="bento-title">Rotina e Tempo Pessoal</h3>
-          <p class="bento-desc">
-            Agenda, compromissos e prioridades organizados com cuidado, para que os seus dias fluam com leveza.
-          </p>
+          <p class="bento-desc">Agenda, compromissos e prioridades organizados com cuidado, para que os seus dias fluam com leveza.</p>
         </div>
       </article>
 
-      <!-- Card 2: Viagens e Experiências (Wide Top) -->
-      <article class="bento-card wide-top">
+      <article class="bento-card wide-top reveal" style="--d: 80ms">
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Curadoria Global</span>
+          <span class="bento-tag">Curadoria global</span>
           <h3 class="bento-title">Viagens e Experiências</h3>
-          <p class="bento-desc">
-            Itinerários desenhados sob medida, hospedagens exclusivas e acessos que transformam uma viagem em memória.
-          </p>
-        </div>
-        <div class="bento-render-wrap" style="width: 240px; margin-left: auto;">
-          <img src="assets/images/bento-road.png" alt="Viagens e Experiências" class="bento-render-img">
+          <p class="bento-desc">Itinerários desenhados sob medida, hospedagens exclusivas e acessos que transformam uma viagem em memória.</p>
         </div>
       </article>
 
-      <!-- Card 3: Mobilidade e Transporte -->
-      <article class="bento-card">
-        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
-          <img src="assets/images/bento-cubes.png" alt="Mobilidade e Transporte" class="bento-render-img" style="max-height: 130px;">
-        </div>
+      <article class="bento-card reveal" style="--d: 140ms">
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-wheel"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Logística &amp; Pontualidade</span>
+          <span class="bento-tag">Logística &amp; pontualidade</span>
           <h3 class="bento-title">Mobilidade e Transporte</h3>
-          <p class="bento-desc">
-            Motoristas de confiança e transfers discretos, pontuais em cada chegada e em cada partida.
-          </p>
+          <p class="bento-desc">Motoristas de confiança e transfers discretos, pontuais em cada chegada e em cada partida.</p>
         </div>
       </article>
 
-      <!-- Card 4: Acessos e Gastronomia -->
-      <article class="bento-card">
-        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
-          <img src="assets/images/bento-palette.png" alt="Acessos e Gastronomia" class="bento-render-img" style="max-height: 130px;">
-        </div>
+      <article class="bento-card reveal" style="--d: 200ms">
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-glass"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Alta Gastronomia &amp; Cultura</span>
+          <span class="bento-tag">Alta gastronomia &amp; cultura</span>
           <h3 class="bento-title">Acessos e Gastronomia</h3>
-          <p class="bento-desc">
-            Mesas disputadas, eventos fechados e uma curadoria cultural escolhida para o seu gosto.
-          </p>
+          <p class="bento-desc">Mesas disputadas, eventos fechados e uma curadoria cultural escolhida para o seu gosto.</p>
         </div>
       </article>
 
-      <!-- Card 5: Rede de Contatos e Especialistas (Wide Bot) -->
-      <article class="bento-card wide-bot">
+      <article class="bento-card wide-bot reveal" style="--d: 80ms">
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Conexões Qualificadas</span>
+          <span class="bento-tag">Conexões qualificadas</span>
           <h3 class="bento-title">Rede de Contatos e Especialistas</h3>
-          <p class="bento-desc">
-            Médicos de referência, especialistas e assessores de confiança, apresentados no momento certo.
-          </p>
-        </div>
-        <div class="bento-render-wrap" style="width: 260px; margin-left: auto;">
-          <img src="assets/images/bento-tech.png" alt="Rede de Especialistas" class="bento-render-img">
+          <p class="bento-desc">Médicos de referência, especialistas e assessores de confiança, apresentados no momento certo.</p>
         </div>
       </article>
 
-      <!-- Card 6: Gestão de Residências e Demandas Sob Medida -->
-      <article class="bento-card">
-        <div class="bento-render-wrap" style="height: 140px; margin-bottom: 16px;">
-          <img src="assets/images/bento-lens.png" alt="Gestão de Residências" class="bento-render-img" style="max-height: 130px;">
-        </div>
+      <article class="bento-card reveal" style="--d: 140ms">
+        <span class="icon-mark"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span>
         <div class="bento-content">
-          <span class="bento-tag">Zelo &amp; Sob Medida</span>
+          <span class="bento-tag">Zelo &amp; sob medida</span>
           <h3 class="bento-title">Gestão de Residências &amp; Imprevistos</h3>
-          <p class="bento-desc">
-            Da casa cuidada em cada detalhe ao imprevisto resolvido antes que se torne preocupação.
-          </p>
+          <p class="bento-desc">Da casa cuidada em cada detalhe ao imprevisto resolvido antes que se torne preocupação.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================================
-     DIFERENCIAIS (Filosofia & Rigor)
-     ========================================================================== -->
-<section class="features-section" id="diferenciais">
+<!-- DIFERENCIAIS (inverte para marfim) -->
+<section class="features-section theme-light" id="diferenciais" data-invert>
   <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">✦ Princípios Fundamentais</div>
-      <h2 class="section-title">O padrão que define o <em>nosso serviço</em></h2>
-      <p class="section-desc">
+    <header class="features-head">
+      <h2 class="section-title reveal">O padrão que define o <em>nosso serviço</em></h2>
+      <p class="section-desc reveal" style="--d: 100ms">
         Critérios inegociáveis que garantem que sua rotina e suas escolhas recebam o mais alto padrão de atenção.
       </p>
+    </header>
+
+    <div class="features-media reveal-media">
+      <img src="assets/images/photo-handshake.webp" alt="Aperto de mãos entre dois homens de terno diante do emblema VÉRTICE" width="1672" height="941" loading="lazy">
     </div>
 
-    <div class="features-grid">
-      <article class="feature-card">
-        <div class="feature-img-box">
-          <img src="assets/images/feature-card1.png" alt="Exclusividade">
-        </div>
-        <div>
-          <h3 class="feature-title">Exclusividade</h3>
-          <p class="feature-desc">
-            Atendemos um círculo restrito de clientes, para que cada um receba atenção integral.
-          </p>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-img-box">
-          <img src="assets/images/feature-card2.png" alt="Um único contato no WhatsApp">
-        </div>
-        <div>
-          <h3 class="feature-title">Um único contato no WhatsApp</h3>
-          <p class="feature-desc">
-            Uma só mensagem, uma pessoa que conhece a sua história. Sem centrais, sem protocolos.
-          </p>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-img-box">
-          <img src="assets/images/feature-card3.png" alt="Conexões qualificadas">
-        </div>
-        <div>
-          <h3 class="feature-title">Conexões qualificadas</h3>
-          <p class="feature-desc">
-            Cada nome que indicamos foi escolhido por mérito, conduta e confiança comprovada.
-          </p>
-        </div>
-      </article>
-
-      <article class="feature-card">
-        <div class="feature-img-box">
-          <img src="assets/images/feature-card5.png" alt="Total discrição">
-        </div>
-        <div>
-          <h3 class="feature-title">Total discrição</h3>
-          <p class="feature-desc">
-            O que nos é confiado permanece entre nós. Sempre.
-          </p>
-        </div>
-      </article>
-    </div>
+    <ul class="principles">
+      <li class="principle reveal">
+        <svg class="icon" aria-hidden="true"><use href="#i-gem"/></svg>
+        <h3 class="principle-title">Exclusividade</h3>
+        <p class="principle-desc">Atendemos um círculo restrito de clientes, para que cada um receba atenção integral.</p>
+      </li>
+      <li class="principle reveal" style="--d: 90ms">
+        <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+        <h3 class="principle-title">Um único contato no WhatsApp</h3>
+        <p class="principle-desc">Uma só mensagem, uma pessoa que conhece a sua história. Sem centrais, sem protocolos.</p>
+      </li>
+      <li class="principle reveal" style="--d: 180ms">
+        <svg class="icon" aria-hidden="true"><use href="#i-nodes"/></svg>
+        <h3 class="principle-title">Conexões qualificadas</h3>
+        <p class="principle-desc">Cada nome que indicamos foi escolhido por mérito, conduta e confiança comprovada.</p>
+      </li>
+      <li class="principle reveal" style="--d: 270ms">
+        <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>
+        <h3 class="principle-title">Total discrição</h3>
+        <p class="principle-desc">O que nos é confiado permanece entre nós. Sempre.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ==========================================================================
-     PAINEL DE MADEIRA NOBRE (Atelier / Family Office)
-     ========================================================================== -->
+<!-- ARTICULAÇÃO SILENCIOSA -->
 <section class="wood-panel-section">
   <div class="container">
-    <div class="wood-banner">
-      <div class="wood-banner-bg"></div>
+    <div class="wood-banner reveal-media">
+      <div class="wood-banner-bg" aria-hidden="true"></div>
       <div class="wood-banner-overlay">
-        <div>
-          <div class="eyebrow" style="border-color: rgba(190, 140, 95, 0.4); color: #E6D0BE;">
-            ✦ ARTICULAÇÃO SILENCIOSA
-          </div>
-          <h2 class="wood-banner-title">
-            Tudo em ordem, sem que você precise <em>acompanhar.</em>
-          </h2>
+        <div class="reveal">
+          <h2 class="wood-banner-title">Tudo em ordem, sem que você precise <em>acompanhar.</em></h2>
           <p class="wood-banner-desc">
             O padrão de um Family Office pessoal aplicado à sua vida e às suas escolhas. Conduzimos cada providência nos bastidores com discrição absoluta, previsibilidade e excelência.
           </p>
         </div>
 
-        <div class="wood-banner-metrics">
-          <div class="wood-metric-row">
-            <div class="wood-metric-icon">1</div>
-            <div class="wood-metric-text">
+        <ol class="wood-banner-metrics">
+          <li class="wood-metric-row reveal" style="--d: 120ms">
+            <span class="wood-metric-icon" aria-hidden="true">I</span>
+            <span class="wood-metric-text">
               <strong>Escuta</strong>
               <span>Você nos conta o que precisa, com as suas palavras e no seu ritmo.</span>
-            </div>
-          </div>
-          <div class="wood-metric-row">
-            <div class="wood-metric-icon">2</div>
-            <div class="wood-metric-text">
+            </span>
+          </li>
+          <li class="wood-metric-row reveal" style="--d: 220ms">
+            <span class="wood-metric-icon" aria-hidden="true">II</span>
+            <span class="wood-metric-text">
               <strong>Articulação</strong>
               <span>Mobilizamos as pessoas certas e conduzimos cada etapa com rigor e reserva.</span>
-            </div>
-          </div>
-          <div class="wood-metric-row">
-            <div class="wood-metric-icon">3</div>
-            <div class="wood-metric-text">
+            </span>
+          </li>
+          <li class="wood-metric-row reveal" style="--d: 320ms">
+            <span class="wood-metric-icon" aria-hidden="true">III</span>
+            <span class="wood-metric-text">
               <strong>Prestação de contas</strong>
               <span>Você recebe um retorno claro e objetivo, com tudo resolvido e devidamente registrado.</span>
-            </div>
-          </div>
-        </div>
+            </span>
+          </li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================================
-     SEÇÃO DE CONTATO: ENVELOPE DE LUXO INTERATIVO 3D (Estilo Carta)
-     ========================================================================== -->
+<!-- CONTATO: carta em papel marfim saindo de um envelope negro -->
 <section class="contact-letter-section" id="contato">
-  <div class="contact-watermark">VÉRTICE</div>
-
   <div class="container">
-    <div class="contact-header">
-      <div class="eyebrow">✦ Canal Direto</div>
+    <header class="contact-header reveal">
       <h2 class="section-title">Escreva-nos.</h2>
       <p class="section-desc">
         Conte o que gostaria de ver resolvido, seja uma viagem a planejar, uma mesa a reservar ou um detalhe que pede atenção. Lemos cada carta com cuidado e respondemos pessoalmente, com toda a discrição que o seu pedido merece.
       </p>
-    </div>
+    </header>
 
-    <!-- Envelope de Papelaria de Luxo 3D -->
-    <div class="envelope-stage">
-      <div class="envelope-wrapper" id="envelopeWrapper">
-        <!-- Aba Superior com Selo -->
-        <div class="envelope-flap"></div>
-        <div class="envelope-seal" id="envelopeSeal" title="Clique para abrir a carta">
-          <svg class="envelope-seal-svg" viewBox="0 0 100 100" fill="none">
-            <path d="M50 14 L82 50 L50 86 L18 50 Z" stroke="#1A1C22" stroke-width="6"/>
-            <line x1="18" y1="50" x2="50" y2="74" stroke="#1A1C22" stroke-width="5"/>
-            <line x1="50" y1="14" x2="50" y2="74" stroke="#1A1C22" stroke-width="5"/>
-            <line x1="82" y1="50" x2="50" y2="74" stroke="#1A1C22" stroke-width="5"/>
-            <circle cx="50" cy="74" r="6" fill="#1A1C22"/>
-          </svg>
-        </div>
+    <div class="envelope-stage" id="envelopeStage">
+      <div class="letter-slot">
+        <div class="letter-clip">
+        <article class="letter" aria-label="Carta para a VÉRTICE">
+          <header class="letter-head">
+            <svg class="letter-emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
+            <span class="letter-brand">VÉRTICE</span>
+            <span class="letter-brand-sub">Private Concierge</span>
+          </header>
 
-        <!-- Corpo do Envelope / Folha da Carta -->
-        <div class="envelope-base">
-          <div class="envelope-letter">
-            <div class="letter-head">
-              <div class="letter-recipient">À VÉRTICE Private Concierge</div>
-              <div class="letter-date">Atendimento Confidencial · Lifestyle Management</div>
+          <p class="letter-date" id="letterDate">Atendimento confidencial</p>
+          <p class="letter-salutation">Prezada equipe VÉRTICE,</p>
+
+          <form class="letter-form" id="letterForm" novalidate>
+            <p class="letter-line">
+              <label for="letterName">meu nome é</label>
+              <input type="text" id="letterName" class="letter-input" name="name" autocomplete="name" placeholder="seu nome">
+              <label for="letterLocation">e escrevo de</label>
+              <input type="text" id="letterLocation" class="letter-input" name="location" autocomplete="address-level2" placeholder="sua cidade">
+            </p>
+
+            <div class="letter-field">
+              <label for="letterDemand" class="letter-line">Gostaria de solicitar:</label>
+              <textarea id="letterDemand" class="letter-textarea" name="demand" rows="4" required aria-describedby="letterError" placeholder="Uma viagem, uma reserva, um detalhe da rotina…"></textarea>
+              <p class="letter-error" id="letterError" role="alert" hidden>Conte em poucas palavras o que gostaria de resolver para podermos começar.</p>
             </div>
 
-            <form class="letter-form" id="letterForm">
-              <div class="letter-field-row">
-                <div class="letter-field">
-                  <label for="letterName">Meu nome</label>
-                  <input type="text" id="letterName" class="letter-input" placeholder="Como podemos te chamar?">
-                </div>
-                <div class="letter-field">
-                  <label for="letterLocation">Cidade / Região</label>
-                  <input type="text" id="letterLocation" class="letter-input" placeholder="Sua cidade ou localização atual">
-                </div>
-              </div>
+            <div class="letter-closing">
+              <span>Com os melhores cumprimentos,</span>
+              <span class="letter-signature" id="letterSignature" aria-hidden="true">Sua assinatura</span>
+            </div>
 
-              <div class="letter-field">
-                <label for="letterDemand">Gostaria de solicitar...</label>
-                <textarea id="letterDemand" class="letter-textarea" rows="4" placeholder="Conte o que gostaria de planejar, resolver ou solicitar... (viagens, rotina, transporte, reservas ou demandas especiais)" required></textarea>
-              </div>
-
-              <div class="letter-actions">
-                <div class="letter-notice">
-                  <span class="letter-notice-dot"></span>
-                  <span>Atendimento confidencial direto no WhatsApp</span>
-                </div>
-                <button type="submit" class="btn-send-letter">
-                  <span>Enviar minha carta</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-              </div>
-            </form>
-          </div>
+            <div class="letter-actions">
+              <span class="letter-notice">
+                <span class="letter-notice-dot" aria-hidden="true"></span>
+                A carta segue direto para o WhatsApp do seu concierge
+              </span>
+              <button type="submit" class="btn-send-letter">
+                <span>Enviar minha carta</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+            </div>
+          </form>
+        </article>
         </div>
       </div>
+
+      <div class="envelope" aria-hidden="true">
+        <div class="envelope-back"></div>
+        <svg class="envelope-flap" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0,0 100,0 50,100" />
+          <polyline points="0,0 50,100 100,0" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <svg class="envelope-pocket" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0,39 50,61 100,39 100,100 0,100" />
+          <polyline class="seam-top" points="0,39 50,61 100,39" vector-effect="non-scaling-stroke"/>
+          <polyline class="seam" points="0,100 50,61 100,100" vector-effect="non-scaling-stroke"/>
+        </svg>
+      </div>
+
+      <button type="button" class="envelope-seal" id="envelopeSeal" aria-label="Abrir a carta">
+        <svg class="envelope-seal-svg" aria-hidden="true"><use href="#i-emblem"/></svg>
+      </button>
     </div>
 
-    <!-- Pílulas de Contato Rápido -->
     <div class="quick-contact-row">
       <a href="https://wa.me/5548984777489" target="_blank" rel="noopener noreferrer" class="quick-contact-pill">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
         <span>(48) 98477-7489</span>
       </a>
       <a href="mailto:contato@verticeprivate.com" class="quick-contact-pill">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
         <span>contato@verticeprivate.com</span>
       </a>
-      <div class="quick-contact-pill">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+      <span class="quick-contact-pill is-static">
+        <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
         <span>verticeprivate.com</span>
-      </div>
+      </span>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================================
-     FOOTER
-     ========================================================================== -->
+</main>
+
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
+        <svg class="footer-emblem" aria-hidden="true"><use href="#i-emblem"/></svg>
         <span class="footer-brand-title">VÉRTICE</span>
         <span class="footer-brand-sub">Private Concierge · Lifestyle Management</span>
       </div>
@@ -494,13 +422,11 @@
         <li><a href="#contato">Escreva-nos</a></li>
       </ul>
 
-      <div class="footer-legal">
-        © 2026 VÉRTICE Private Concierge. Todos os direitos reservados.
-      </div>
+      <div class="footer-legal">© 2026 VÉRTICE Private Concierge. Todos os direitos reservados.</div>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=9"></script>
 </body>
 </html>
