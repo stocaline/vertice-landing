@@ -154,7 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
   nameInput?.addEventListener('input', syncSignature);
   syncSignature();
 
-  // 8. Envio da carta via WhatsApp
+  // 8. Origem do acesso (ex: ?ref=cartao via QR Code do cartão físico) e envio via WhatsApp
+  const params = new URLSearchParams(window.location.search);
+  const refParam = (params.get('ref') || params.get('utm_source') || '').toLowerCase();
+  const veioDoCartao = refParam.includes('cartao') || refParam.includes('card');
+
+  if (veioDoCartao) {
+    const msgDireta = encodeURIComponent(
+      'Olá, equipe VÉRTICE Private Concierge. Acessei pelo QR Code do cartão e gostaria de conversar.'
+    );
+    document.querySelectorAll('a[href^="https://wa.me/5548984777489"]').forEach((link) => {
+      link.setAttribute('href', `https://wa.me/5548984777489?text=${msgDireta}`);
+    });
+  }
+
   const letterForm = document.getElementById('letterForm');
   const demandInput = document.getElementById('letterDemand');
   const errorEl = document.getElementById('letterError');
@@ -179,8 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     setError(false);
 
-    const text = [
+    const lines = [
       'Olá, equipe VÉRTICE Private Concierge.',
+      ...(veioDoCartao ? ['[Origem: QR Code do Cartão VÉRTICE]'] : []),
       '',
       `Meu nome é: ${name}`,
       `Localização: ${location}`,
@@ -189,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
       `"${demand}"`,
       '',
       'Gostaria de agendar uma conversa confidencial para entender como podemos conduzir essa demanda.'
-    ].join('\n');
+    ];
 
-    window.open(`https://wa.me/5548984777489?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/5548984777489?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
   });
 });
